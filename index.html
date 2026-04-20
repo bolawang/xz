@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒數計時器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Countdown Studio</p>
+      <h1>倒數計時器</h1>
+      <p class="subtitle">輸入時間後開始倒數，也可以用快捷預設快速試玩。</p>
+    </section>
+
+    <section class="timer-card">
+      <div class="timer-display" aria-live="polite">
+        <span id="minutes">05</span>
+        <span class="separator">:</span>
+        <span id="seconds">00</span>
+      </div>
+
+      <form class="controls" id="timer-form">
+        <label>
+          分鐘
+          <input id="input-minutes" type="number" min="0" max="999" value="5" inputmode="numeric">
+        </label>
+        <label>
+          秒數
+          <input id="input-seconds" type="number" min="0" max="59" value="0" inputmode="numeric">
+        </label>
+        <button class="ghost-button" type="submit">套用時間</button>
+      </form>
+
+      <div class="quick-actions" aria-label="快速預設">
+        <button class="chip" data-seconds="60">1 分鐘</button>
+        <button class="chip" data-seconds="300">5 分鐘</button>
+        <button class="chip" data-seconds="600">10 分鐘</button>
+        <button class="chip" data-seconds="1500">25 分鐘</button>
+      </div>
+
+      <div class="primary-actions">
+        <button id="start-button" class="primary-button">開始</button>
+        <button id="pause-button" class="secondary-button">暫停</button>
+        <button id="reset-button" class="ghost-button">重設</button>
+      </div>
+
+      <p id="status-text" class="status-text">已準備好，可以開始倒數。</p>
+    </section>
+  </main>
+
+  <audio id="alarm-sound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRlQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YTAAAAB/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/" type="audio/wav">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
