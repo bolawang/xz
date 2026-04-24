@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&#x5012;&#x6578;&#x8A08;&#x6642;&#x5668;</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Focus Countdown</p>
+      <h1>&#x5012;&#x6578;&#x8A08;&#x6642;&#x5668;</h1>
+      <p class="subtitle">&#x8A2D;&#x5B9A;&#x6642;&#x9593;&#x5F8C;&#x6309;&#x4E0B;&#x958B;&#x59CB;&#xFF0C;&#x756B;&#x9762;&#x6703;&#x5373;&#x6642;&#x986F;&#x793A;&#x5269;&#x9918;&#x6642;&#x9593;&#x8207;&#x9032;&#x5EA6;&#x3002;</p>
+      <div class="theme-switch" aria-label="theme switcher">
+        <button class="theme-chip active" data-theme="cute">Cute</button>
+        <button class="theme-chip" data-theme="pro">Pro</button>
+      </div>
+    </section>
+
+    <section class="timer-card">
+      <div class="card-topline">
+        <span class="pill pill-live">Live Timer</span>
+        <span class="pill">&#x53EF;&#x5207;&#x63DB;&#x98A8;&#x683C;</span>
+      </div>
+      <div class="timer-shell">
+        <svg class="progress-ring" viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="ring-track" cx="110" cy="110" r="92"></circle>
+          <circle class="ring-progress" cx="110" cy="110" r="92"></circle>
+        </svg>
+        <div class="timer-display">
+          <span class="display-label">&#x5269;&#x9918;&#x6642;&#x9593;</span>
+          <strong id="timeDisplay">25:00</strong>
+          <span id="statusText" class="display-status">&#x6E96;&#x5099;&#x958B;&#x59CB;</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>&#x5C0F;&#x6642;</span>
+          <input id="hoursInput" type="number" min="0" max="23" value="0">
+        </label>
+        <label>
+          <span>&#x5206;&#x9418;</span>
+          <input id="minutesInput" type="number" min="0" max="59" value="25">
+        </label>
+        <label>
+          <span>&#x79D2;&#x6578;</span>
+          <input id="secondsInput" type="number" min="0" max="59" value="0">
+        </label>
+      </div>
+
+      <div class="presets" aria-label="quick presets">
+        <button class="preset" data-minutes="1">1 &#x5206;&#x9418;</button>
+        <button class="preset" data-minutes="5">5 &#x5206;&#x9418;</button>
+        <button class="preset active" data-minutes="25">25 &#x5206;&#x9418;</button>
+        <button class="preset" data-minutes="45">45 &#x5206;&#x9418;</button>
+      </div>
+
+      <div class="actions">
+        <button id="startButton" class="primary">&#x958B;&#x59CB;</button>
+        <button id="pauseButton" class="secondary">&#x66AB;&#x505C;</button>
+        <button id="resetButton" class="ghost">&#x91CD;&#x8A2D;</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
